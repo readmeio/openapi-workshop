@@ -1,0 +1,53 @@
+{
+  "preferGlobal": true,
+  "name": "openapi-workshop",
+  "version": "1.0.0",
+  "description": "Self-driven workshop to learn OpenAPI",
+  "bin": {
+    "openapi-workshop": "./bin/openapi-workshop"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint && npm run prettier",
+    "prettier": "prettier --list-different --write \"./**/**.js\"",
+    "test": "workshopper-adventure-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/readmeio/openapi-workshop.git"
+  },
+  "keywords": [
+    "nodeschool",
+    "workshopper",
+    "tutorial",
+    "openapi",
+    "oas"
+  ],
+  "author": "Jon Ursenbach <jon@ursenba.ch>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/readmeio/openapi-workshop/issues"
+  },
+  "homepage": "https://github.com/readmeio/openapi-workshop#readme",
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "chokidar": "^1.6.1",
+    "colors": "^1.1.2",
+    "deep-equal": "^1.0.1",
+    "diff": "^3.2.0",
+    "express": "^4.13.4",
+    "openurl": "^1.1.1",
+    "remark": "^7.0.0",
+    "remark-html": "^6.0.0",
+    "workshopper-adventure": "^6.0.2"
+  },
+  "devDependencies": {
+    "@readme/eslint-config": "^3.1.3",
+    "eslint": "^7.1.0",
+    "prettier": "^2.0.5",
+    "workshopper-adventure-test": "^1.1.0"
+  },
+  "prettier": "@readme/eslint-config/prettier"
+}
