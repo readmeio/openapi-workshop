@@ -14,7 +14,7 @@ const workshop = workshopper({
 });
 
 workshop.addAll([
-  'HELLO WORLD',
+  'TITLES',
   // 'HEADINGS',
   // 'EMPHASIS',
   // 'LISTS',

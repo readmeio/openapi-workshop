@@ -1,4 +1,3 @@
 - To print these instructions again, run: `{appname} print`
-- To execute your program, run: `{appname} run file.json`
 - To verify your program, run: `{appname} verify file.json`
 - For help run: `{appname} help`
