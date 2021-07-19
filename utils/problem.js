@@ -25,8 +25,7 @@ module.exports = dirname => {
   exports.verify = function verify(args, done) {
     const filename = args[0];
     const attempt = JSON.parse(fs.readFileSync(filename, 'utf8'));
-
-    const oas = new OASNormalize(attempt); // Or a string, pathname, JSON blob, whatever
+    const oas = new OASNormalize(attempt);
 
     const runSolution = () => {
       const errors = this.solution(attempt);
@@ -42,64 +41,14 @@ module.exports = dirname => {
     oas
       .validate()
       .then(definition => {
-        console.log('YAY IT PASSED', definition); // definition will always be JSON, and valid
         runSolution();
       })
       .catch(err => {
-        done(false);
         console.log(err.errors);
+        done(false);
       });
 
-    // exports.fail = fail({
-    //   filename,
-    //   attempt,
-    //   solution,
-    //   troubleshooting: this.troubleshooting,
-    // });
-
     return done(false);
-  };
-
-  exports.run = function run(args, done) {
-    const filename = args[0];
-
-    const processor = remark().use(html);
-    const watcher = chokidar.watch(filename);
-    const server = express();
-
-    let result = '';
-
-    watcher.on('add', file => {
-      console.log(`${file} has been added.`);
-      result = processor().processSync(fs.readFileSync(filename, 'utf8'));
-    });
-
-    watcher.on('change', file => {
-      console.log(`${file} has been changed.`);
-      result = processor().processSync(fs.readFileSync(filename, 'utf8'));
-    });
-
-    watcher.on('unlink', file => {
-      console.warn(`${file} has been unlinked.`);
-      done();
-    });
-
-    watcher.on('error', file => {
-      console.error(`${file} has been errored.`);
-      done();
-    });
-
-    server.get('*', (req, res) => {
-      res.send(result.toString());
-    });
-
-    server.listen(3000, () => {
-      console.log(`
-        File is served on http://localhost:3000/
-        Hit Ctrl+C to exit.
-      `);
-      open('http://localhost:3000/');
-    });
   };
 
   return exports;
