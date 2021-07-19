@@ -18,28 +18,23 @@ module.exports = dirname => {
     const lang = workshopper.i18n.lang();
 
     this.problem = { file: path.join(dirname, `${lang}.md`) };
-    this.solutionPath = path.resolve(dirname, 'solution', 'solution.json');
-    this.solution = [
-      { text: fs.readFileSync(this.solutionPath), type: 'plain' },
-      { file: path.join(dirname, 'solution', `${lang}.md`) },
-    ];
+    this.solution = require(`${dirname}/solution/solution.js`);
     this.troubleshooting = path.join(__dirname, '..', 'i18n', 'troubleshooting', `${lang}.md`);
   };
 
   exports.verify = function verify(args, done) {
     const filename = args[0];
     const attempt = fs.readFileSync(filename, 'utf8');
-    const solution = fs.readFileSync(this.solutionPath, 'utf8');
 
     // console.log('WHOAAAAA: ', solution);
 
-    const oas = new OASNormalize(solution); // Or a string, pathname, JSON blob, whatever
+    const oas = new OASNormalize(attempt); // Or a string, pathname, JSON blob, whatever
 
     oas
       .validate()
       .then(definition => {
         console.log('YAY IT PASSED', definition); // definition will always be JSON, and valid
-        done(true)
+        done(true);
       })
       .catch(err => {
         done(false);
