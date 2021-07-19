@@ -24,17 +24,26 @@ module.exports = dirname => {
 
   exports.verify = function verify(args, done) {
     const filename = args[0];
-    const attempt = fs.readFileSync(filename, 'utf8');
-
-    // console.log('WHOAAAAA: ', solution);
+    const attempt = JSON.parse(fs.readFileSync(filename, 'utf8'));
 
     const oas = new OASNormalize(attempt); // Or a string, pathname, JSON blob, whatever
+
+    const runSolution = () => {
+      const errors = this.solution(attempt);
+
+      if (errors.length > 0) {
+        errors.forEach(error => console.log(error));
+        done(false);
+      }
+
+      done(true);
+    };
 
     oas
       .validate()
       .then(definition => {
         console.log('YAY IT PASSED', definition); // definition will always be JSON, and valid
-        done(true);
+        runSolution();
       })
       .catch(err => {
         done(false);
