@@ -13,13 +13,11 @@ const fail = require('./fail');
 module.exports = dirname => {
   const exports = {};
 
-  exports.init = function init(workshopper) {
-    // Get lang code
-    const lang = workshopper.i18n.lang();
-
-    this.problem = { file: path.join(dirname, `${lang}.md`) };
+  exports.init = function init() {
+    this.problem = { file: path.join(dirname, `readme.md`) };
+    // eslint-disable-next-line import/no-dynamic-require
     this.solution = require(`${dirname}/solution/solution.js`);
-    this.troubleshooting = path.join(__dirname, '..', 'i18n', 'troubleshooting', `${lang}.md`);
+    this.troubleshooting = path.join(__dirname, '..', 'i18n', 'troubleshooting', `readme.md`);
   };
 
   exports.verify = function verify(args, done) {
