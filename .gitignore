@@ -3,4 +3,4 @@ node_modules/
 npm-debug.log
 
 /file.json
-/answer.json
+answers/

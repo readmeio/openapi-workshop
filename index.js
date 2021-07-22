@@ -15,18 +15,17 @@ const workshop = workshopper({
 });
 
 workshop.addAll([
-  '1 TITLES',
-  // 'HEADINGS',
-  // 'EMPHASIS',
-  // 'LISTS',
-  // 'LINKS',
-  // 'IMAGES',
-  // 'BLOCKQUOTES',
-  // 'CODE',
-  // 'TABLES',
-  // 'HORIZONTAL RULES',
-  // 'HTML',
-  // 'GFM',
+  '1 WELCOME',
+  '2 WARM UP TITLES',
+  '3 DEFINING A POST ENDPOINT',
+  '4 POST REQUESTBODY',
+  '5 POST RESPONSE',
+  '6 DEFINING A GET ENDPOINT',
+  '7 REFS',
+  '8 MORE REFS',
+  '9 SERVER VARIABLES',
+  '10 ANYOF ALLOF',
+  '11 FIN',
 ]);
 
 const { selectExercise } = workshop;
