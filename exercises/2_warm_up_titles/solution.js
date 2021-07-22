@@ -1,5 +1,5 @@
 const solution = userSpec => {
-  if (userSpec.translateAbs) return;
+  if (userSpec.translateAbs) return [];
 
   const messages = [];
 
