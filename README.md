@@ -32,9 +32,9 @@ This workshopper has easy and clear tasks that cover the most important aspects 
 
 ## Requirements
 
-If you are on Windows, make sure you are using at least version 14.17.3 LTS of Node.js
+If you are on Windows, make sure you are using at least version 14.15.1 of Node.js
 
-* [**Node.js**](node-url) >=14.17.3
+* [**Node.js**](node-url) >=14.15.1
 
 ## Installation
 
