@@ -2,6 +2,7 @@ const workshopper = require('workshopper-adventure');
 const path = require('path');
 const header = require('workshopper-adventure/default/header');
 const fs = require('fs');
+const fsPromises = require('fs/promises');
 
 const workshop = workshopper({
   appDir: __dirname,
@@ -30,10 +31,16 @@ workshop.addAll([
 
 const { selectExercise } = workshop;
 
-workshop.selectExercise = (...args) => {
+workshop.selectExercise = async (...args) => {
   selectExercise.apply(workshop, args);
   const [exercise] = args;
   const filename = path.join(__dirname, 'exercises', exercise.replace(/\s/g, '_'), `template.json`);
+  try {
+    await fsPromises.access('answers/', fs.constants.R_OK | fs.constants.W_OK);
+  } catch (e) {
+    await fsPromises.mkdir('answers');
+  }
+
   fs.copyFile(filename, `answers/${exercise.replace(/\s/g, '_').toLowerCase()}.json`, err => {
     if (err) throw err;
   });

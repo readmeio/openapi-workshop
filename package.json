@@ -1,7 +1,7 @@
 {
   "preferGlobal": true,
   "name": "openapi-workshop",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Self-driven workshop to learn OpenAPI",
   "bin": {
     "openapi-workshop": "./bin/openapi-workshop"
