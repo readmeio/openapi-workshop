@@ -36,6 +36,7 @@ workshop.selectExercise = async (...args) => {
   const [exercise] = args;
   const filename = path.join(__dirname, 'exercises', exercise.replace(/\s/g, '_'), `template.json`);
   try {
+    // eslint-disable-next-line no-bitwise
     await fsPromises.access('answers/', fs.constants.R_OK | fs.constants.W_OK);
   } catch (e) {
     await fsPromises.mkdir('answers');

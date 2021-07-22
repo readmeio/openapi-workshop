@@ -8,7 +8,6 @@ module.exports = dirname => {
 
   exports.init = function init() {
     this.problem = { file: path.join(dirname, `readme.md`) };
-    // eslint-disable-next-line import/no-dynamic-require global-require
     this.solution = require(`${dirname}/solution.js`);
     this.troubleshooting = path.join(__dirname, '..', 'i18n', 'troubleshooting', `readme.md`);
   };
@@ -37,7 +36,8 @@ module.exports = dirname => {
           return done(false);
         }
 
-        console.log('✅ Pass: Congrats! You did it! 🎉 You can now move onto the next step'.green);
+        console.log('Congrats! You did it! 🎉 You can now move onto the next step.'.green);
+        console.log('');
 
         if (meta?.doc) {
           console.log('📄 See how it renders as a doc: ', meta.doc);
@@ -47,7 +47,7 @@ module.exports = dirname => {
       })
       .catch(err => {
         console.log(
-          "❌ Oops! Validation Failure. If you have an account with us, you can shoot us a message on intercom (just kidding don't do this)"
+          "❌ Oops! Validation Failure. If you have an account with us, you can shoot us a message on Intercom (just kidding don't do this)"
             .red
         );
         if (typeof err !== 'undefined') {
