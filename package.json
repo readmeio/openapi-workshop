@@ -3,14 +3,13 @@
   "name": "openapi-workshop",
   "version": "1.0.1",
   "description": "Self-driven workshop to learn OpenAPI",
+  "author": "Sean Dokko <seandokko.com>",
+  "license": "MIT",
   "bin": {
     "openapi-workshop": "./bin/openapi-workshop"
   },
-  "scripts": {
-    "lint": "eslint .",
-    "pretest": "npm run lint",
-    "prettier": "prettier --list-different --write \"./**/**.js\"",
-    "test": "workshopper-adventure-test"
+  "engines": {
+    "node": "^12 || ^14 || ^16"
   },
   "repository": {
     "type": "git",
@@ -23,14 +22,15 @@
     "openapi",
     "oas"
   ],
-  "author": "Sean Dokko <seandokko.com>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/readmeio/openapi-workshop/issues"
   },
-  "homepage": "https://github.com/readmeio/openapi-workshop#readme",
-  "engines": {
-    "node": ">=14.15.1"
+  "homepage": "https://github.com/readmeio/openapi-workshop",
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "prettier": "prettier --list-different --write \"./**/**.js\"",
+    "test": "workshopper-adventure-test"
   },
   "dependencies": {
     "colors": "^1.4.0",
