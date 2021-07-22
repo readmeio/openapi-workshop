@@ -30,7 +30,8 @@ module.exports = dirname => {
           errors.forEach(error => console.log(error.red));
 
           if (meta?.hint) {
-            console.log('🙋🏼‍♀️ Do you need a hint? If so, use this link for the answer', meta.hint);
+            console.log('')
+            console.log('🙋🏼‍♀️ Do you need a hint? If so, use this link for the answer:', meta.hint.blue);
           }
 
           return done(false);
