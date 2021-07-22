@@ -1,11 +1,8 @@
-const solution = userSpec => {
-  const messages = [];
+const checkPaths = require('../../utils/checkPaths');
 
-  if (userSpec?.info?.title !== 'Hoot Hoot') {
-    messages.push(
-      `'title' is wrong! You entered '${userSpec?.info?.title}', when it should have been 'Hoot Hoot'`
-    );
-  }
+const solution = userSpec => {
+  const requiredPaths = 'paths./hoot/{id}.get.responses.200.content.application/json.schema.anyOf'.split('.');
+  const messages = checkPaths(userSpec, requiredPaths);
 
   return messages;
 };

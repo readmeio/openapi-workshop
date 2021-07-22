@@ -13,6 +13,7 @@ module.exports = dirname => {
     this.troubleshooting = path.join(__dirname, '..', 'i18n', 'troubleshooting', `readme.md`);
   };
 
+  // Can't use async here because it will console.log [Object Promise]
   exports.verify = function verify(args, done) {
     const filename = args[0];
     const attempt = JSON.parse(fs.readFileSync(filename, 'utf8'));

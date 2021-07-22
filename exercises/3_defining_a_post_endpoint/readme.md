@@ -1,4 +1,4 @@
-Now we’re going to define a **POST** endpoint. In “paths” , add a key called `"/hoot"` and add this object
+Now we’re going to define a **POST** endpoint. In “paths” , add a key called `"/hoot"` and add this object:
 
 ```
 {
@@ -7,20 +7,22 @@ Now we’re going to define a **POST** endpoint. In “paths” , add a key call
     "description": "Post a new hoot to the site",
     "tags": [
     ],
-    "requestBody": {
-    },
     "security": [
       {
         "basicAuth": []
       }
     ],
     "responses": {
+      "200": {
+        "description": "Successful response"
+      }
     }
   }
 }
 ```
 
 
+Here is a cutout of what the starter template looks like:
 ```
 {
 ...

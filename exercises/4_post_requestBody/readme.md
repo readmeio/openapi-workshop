@@ -4,22 +4,32 @@ We’re going to give you some starter template for how the requestBody should l
 
 **Instruction: build out the “replyTo” property with type: “string” and description: “Optional ID of the hoot you’re replying to”**
 
+
+Here is an example of the "post" property:
 ```
-"/hoot": {
-  "post": {
-    "summary": "Create a hoot",
-    "description": "Post a new hoot to the site",
-    "tags": [
-      "Hoots"
+"post": {
+  "type": "string",
+  "description": "The under-280-character content you want to hoot"
+},
+```
+
+Here is what the starter template looks like:
+```
+{
+...
+"application/json": {
+  "schema": {
+    "type": "object",
+    "required": [
+      "post"
     ],
-    "requestBody": "{ YOUR ANSWER HERE }",
-    "security": [
-      {
-        "basicAuth": []
-      }
-    ],
-    "responses": {
+    "properties": {
+      "post": {
+        "type": "string",
+        "description": "The under-280-character content you want to hoot"
+      },
+      "replyto": "{ YOUR ANSWER HERE }"
     }
-  }
+...
 }
 ```
