@@ -1,7 +1,7 @@
 const checkPaths = require('../../utils/checkPaths');
 
 const solution = userSpec => {
-  const requiredPaths = 'paths./hoot.post.response'.split('.');
+  const requiredPaths = 'paths./hoot.post.responses.200'.split('.');
   const messages = checkPaths(userSpec, requiredPaths);
 
   return messages;

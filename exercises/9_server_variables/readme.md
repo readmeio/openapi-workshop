@@ -4,6 +4,7 @@
 
 Side note: We wrote a blog about this topic a while back https://blog.readme.com/basic-oas-server-variables-support/
 
+Here is what the starter template looks like:
 ```
 {
 ...
