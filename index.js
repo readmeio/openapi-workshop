@@ -57,7 +57,8 @@ workshop.selectExercise = async (...args) => {
     }
   }
 
-  exerciseName = exerciseName.replace(/\s/g, '_');
+  // Have to lowercase the exercise name to be compatible with case-sensitive file systems.
+  exerciseName = exerciseName.toLowerCase().replace(/\s/g, '_');
 
   const filename = path.join(__dirname, 'exercises', exerciseName, `template.json`);
   try {
