@@ -1,10 +1,10 @@
-** Fin. What's Next? **
+**Fin. What's Next?**
 
-Thanks for following through this quick workshop for learning about OAS! This has been sponsored by ReadMe! 🦉 If you'd like to save 15 years (or more or less, depending on your commitment) on building OAS documentation, be sure to check out readme.com. 
+Thanks for following through this quick workshop for learning about OpenAPi! This has been sponsored by ReadMe! 🦉 If you'd like to save 15 years (or more or less, depending on your commitment) on building API documentation, be sure to check out https://readme.com.
 
 Oh yeah. Here are some details:
 
-💫 We’d love if you can star this project on GitHub: https://github.com/readmeio/openapi-workshop
+💫 We’d love if you can star this project on GitHub (or if you have feedback for us!): https://github.com/readmeio/openapi-workshop
 
 🦉 Take a break and watch this Owl laughing on YouTube: https://www.youtube.com/watch?v=M5p9JO9JgvU
 
@@ -12,13 +12,11 @@ Oh yeah. Here are some details:
 
 🧪 Think you got what it takes? Take our quiz: https://create.kahoot.it/share/duplicate-of-openapi-what-s-the-problem-4-3-20/bb374982-c672-45cc-8ea7-a89d4c39ce80
 
-🗞 Check out how the this OpenAPI file renders on ReadMe: https://preview.readme.io/post_hoot?url=https%3A%2F%2Fdevelopers.hoot.at%2Fopenapi%2F5f57d10f394c3b0024658bc1
+🗞 Check out how the OpenAPI definition renders on ReadMe: https://preview.readme.io/post_hoot?url=https%3A%2F%2Fdevelopers.hoot.at%2Fopenapi%2F5f57d10f394c3b0024658bc1
 
-🔌 Small Plug: Upload the OpenAPI file you created into ReadMe! dash.readme.io/login
+🔌 Small Plug: Upload the OpenAPI file you created into ReadMe! https://readme.com
 
-🤓 Learn OpenAPI the hard way
-https://spec.openapis.org/oas/v3.0.3
-
+🤓 Learn OpenAPI the hard way... https://spec.openapis.org/oas/v3.0.3
 
 Contributors
 

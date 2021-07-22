@@ -1,6 +1,8 @@
-Let’s do one more `"$ref"` just for good measure! (We'll use it later)
+Let's do one more `"$ref"` just for good measure! Don't worry we'll use it again later.
 
-**Instruction: Write a schema called "Squawk" that is identical to "Hoot"**
+### 👩‍🏫 Instructions
+
+Write a schema called "Squawk" that is identical to "Hoot".
 
 ```
 {
@@ -12,9 +14,6 @@ Let’s do one more `"$ref"` just for good measure! (We'll use it later)
         }
       },
       "Squawk": "{ YOUR ANSWER HERE }"
-    },
-    "x-readme": {
-      "explorer-enabled": true
     }
   }
 }

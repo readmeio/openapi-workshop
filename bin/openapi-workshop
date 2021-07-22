@@ -1,16 +1,13 @@
 #!/usr/bin/env node
-
-'use strict';
-
 const pkg = require('../package');
 
-const curretVersion = process.versions.node;
+const currentVersion = process.versions.node;
 const targetVersion = pkg.engines.node.replace(/>|=|<|~/g, '');
 
-if (parseFloat(curretVersion) < parseFloat(targetVersion)) {
+if (parseFloat(currentVersion) < parseFloat(targetVersion)) {
   console.error(`
     ${pkg.name} supports only Node.js v${targetVersion} or higher
-    You have installed Node.js v${curretVersion}.
+    You have installed Node.js v${currentVersion}.
     Please, update Node.js to v${targetVersion}+: https://nodejs.org/download
   `);
   process.exit(1);

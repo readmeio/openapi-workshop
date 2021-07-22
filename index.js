@@ -2,10 +2,12 @@ const workshopper = require('workshopper-adventure');
 const path = require('path');
 const header = require('workshopper-adventure/default/header');
 const fs = require('fs');
-const fsPromises = require('fs/promises');
+const fsPromises = require('fs').promises;
+const pkg = require('./package.json');
 
 const workshop = workshopper({
   appDir: __dirname,
+  appRepo: pkg.homepage,
   languages: ['en'],
   header,
   footer: [
@@ -13,9 +15,14 @@ const workshop = workshopper({
       file: path.join(__dirname, 'i18n', 'footer', '{lang}.md'),
     },
   ],
+  help: [
+    {
+      file: path.join(__dirname, 'i18n', 'usage', '{lang}.md'),
+    },
+  ],
 });
 
-workshop.addAll([
+const exercises = [
   '1 WELCOME',
   '2 WARM UP TITLES',
   '3 DEFINING A POST ENDPOINT',
@@ -27,22 +34,43 @@ workshop.addAll([
   '9 SERVER VARIABLES',
   '10 ANYOF ALLOF',
   '11 FIN',
-]);
+];
+
+workshop.addAll(exercises);
 
 const { selectExercise } = workshop;
 
 workshop.selectExercise = async (...args) => {
   selectExercise.apply(workshop, args);
-  const [exercise] = args;
-  const filename = path.join(__dirname, 'exercises', exercise.replace(/\s/g, '_'), `template.json`);
-  try {
-    // eslint-disable-next-line no-bitwise
-    await fsPromises.access('answers/', fs.constants.R_OK | fs.constants.W_OK);
-  } catch (e) {
-    await fsPromises.mkdir('answers');
+
+  let [exercise] = args;
+  exercise = exercise.trim().replace(/\s/g, '_');
+
+  let exerciseName = exercises.find(name => {
+    return name.replace(/\s/g, '_').toLowerCase() === exercise.toLowerCase();
+  });
+
+  if (!exerciseName) {
+    exerciseName = exercise === '0' ? exercises[0] : exercises[exercise - 1];
+    if (!exerciseName) {
+      throw new Error('Unknown exercise supplied.');
+    }
   }
 
-  fs.copyFile(filename, `answers/${exercise.replace(/\s/g, '_').toLowerCase()}.json`, err => {
+  // Have to lowercase the exercise name to be compatible with case-sensitive file systems.
+  exerciseName = exerciseName.toLowerCase().replace(/\s/g, '_');
+
+  const filename = path.join(__dirname, 'exercises', exerciseName, `template.json`);
+  const answersDir = path.join(__dirname, 'answers');
+
+  try {
+    // eslint-disable-next-line no-bitwise
+    await fsPromises.access(answersDir, fs.constants.R_OK | fs.constants.W_OK);
+  } catch (e) {
+    await fsPromises.mkdir(answersDir);
+  }
+
+  fs.copyFile(filename, path.join(answersDir, `${exerciseName.toLowerCase()}.json`), err => {
     if (err) throw err;
   });
 };

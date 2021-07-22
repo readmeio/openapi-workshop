@@ -1,8 +1,11 @@
-Now, let’s create another route called “/hoot/{id}” as a GET method. Notice the `"``{id}``"` part; that’s called a path parameter. There are many different types of parameters, but in order for the spec to recognize it as a path param, we need to spec it out.
+Now, let's create another route called "/hoot/{id}" as a GET method. Notice the `"{id}"` part; that's called a path parameter. There are many different types of parameters, but in order for the spec to recognize it as a path param, we need to spec it out.
 
-**Instruction: After you spec out the general GET path, add this object within the "parameters" array:**
+### 👩‍🏫 Instructions
 
-Here is what the parameter object looks like
+After you spec out the general GET path, add this object within the "parameters" array:
+
+Here is what the parameter object looks like:
+
 ```
 {
   "in": "path",
@@ -15,9 +18,10 @@ Here is what the parameter object looks like
 }
 ```
 
-And this is the general structure of a GET request
+And this is the general structure of a GET request:
+
 ```
- "get": {
+"get": {
   "summary": "Get a hoot",
   "tags": [
     "Hoots"
@@ -35,6 +39,7 @@ And this is the general structure of a GET request
 ```
 
 Here is what the starter template looks like:
+
 ```
 {
 ...

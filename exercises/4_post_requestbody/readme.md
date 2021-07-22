@@ -1,11 +1,13 @@
-Let’s add a **requestBody** now. **requestBody** will tell devs how you can construct your body parameters.
+Let's add a **requestBody** now. **requestBody** will tell developers how you can construct payloads for things like a `POST` or `PUT` API request.
 
-We’re going to give you some starter template for how the requestBody should look like. In it, we’ve already given you a “post” property.
+We're going to give you a starter template for what the requestBody should look like. In it, we've already given you a "post" property.
 
-**Instruction: build out the “replyTo” property with type: “string” and description: “Optional ID of the hoot you’re replying to”**
+### 👩‍🏫 Instructions
 
+Build out the "replyTo" property with a "string" type and "Optional ID of the hoot you’re replying to" description.
 
 Here is an example of the "post" property:
+
 ```
 "post": {
   "type": "string",
@@ -14,6 +16,7 @@ Here is an example of the "post" property:
 ```
 
 Here is what the starter template looks like:
+
 ```
 {
 ...
