@@ -51,7 +51,7 @@ workshop.selectExercise = async (...args) => {
   });
 
   if (!exerciseName) {
-    exerciseName = exercises[exercise - 1];
+    exerciseName = exercise === '0' ? exercises[0] : exercises[exercise - 1];
     if (!exerciseName) {
       throw new Error('Unknown exercise supplied.');
     }
