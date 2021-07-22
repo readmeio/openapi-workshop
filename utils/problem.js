@@ -16,7 +16,7 @@ module.exports = dirname => {
   exports.init = function init() {
     this.problem = { file: path.join(dirname, `readme.md`) };
     // eslint-disable-next-line import/no-dynamic-require
-    this.solution = require(`${dirname}/solution/solution.js`);
+    this.solution = require(`${dirname}/solution.js`);
     this.troubleshooting = path.join(__dirname, '..', 'i18n', 'troubleshooting', `readme.md`);
   };
 

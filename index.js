@@ -15,7 +15,7 @@ const workshop = workshopper({
 });
 
 workshop.addAll([
-  'TITLES',
+  '1 TITLES',
   // 'HEADINGS',
   // 'EMPHASIS',
   // 'LISTS',
@@ -34,8 +34,8 @@ const { selectExercise } = workshop;
 workshop.selectExercise = (...args) => {
   selectExercise.apply(workshop, args);
   const [exercise] = args;
-  const filename = path.join(__dirname, 'exercises', exercise, `template.json`);
-  fs.copyFile(filename, 'answer.json', err => {
+  const filename = path.join(__dirname, 'exercises', exercise.replace(/\s/g, '_'), `template.json`);
+  fs.copyFile(filename, `answers/${exercise.replace(/\s/g, '_').toLowerCase()}.json`, err => {
     if (err) throw err;
   });
 };
