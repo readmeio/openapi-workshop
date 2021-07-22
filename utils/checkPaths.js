@@ -2,6 +2,8 @@
 const get = require('lodash.get');
 
 module.exports = function (obj, paths) {
+  if (obj.translateAbs) return [];
+
   const messages = [];
 
   let cumulativePath = '';
