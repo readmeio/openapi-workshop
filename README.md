@@ -7,7 +7,7 @@
 [![NPM version][npm-image]][npm-url]
 [![node][node-image]][node-url]
 
-> Learn how to use the OpenAPI Specification the easy way
+**✨ Learn how to use the OpenAPI Specification the easy way! ✨**
 
 > **OAS** is a specification for machine-readable interface files for describing, producing, consuming, and visualizing RESTful web services
 >
