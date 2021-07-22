@@ -6,6 +6,7 @@
 
 [![NPM version][npm-image]][npm-url]
 [![node][node-image]][node-url]
+[![repo][ci-image]][repo-url]
 
 **✨ Learn how to use the OpenAPI Specification the easy way! ✨**
 
@@ -22,16 +23,16 @@ This workshopper has easy and clear tasks that cover the most important aspects 
 * **POST requestBody** — Learn about the POST requestBody structure
 * **POST response** — Learn about the POST response
 * **GET Endpoints** — Learn how to define a GET endpoint
-* **$refs** — Learn how to use `$ref` in OAS
+* **$ref** — Learn how to use `$ref` in OAS
 * **Server Variables** — Build dynamic URLs for your API with Server Variables
 * **anyOf, allOf** — Build complex schemas with `anyOf` and `allOf`
 
 
 ## Requirements
 
-If you are on Windows, make sure you are using at least version 14.15.1 of Node.js
+If you are on Windows, make sure you are using at least version 12 of Node.js
 
-* [**Node.js**](node-url) >=14.15.1
+* [**Node.js**](node-url) ^12 || ^14 || ^16
 
 ## Installation
 
@@ -51,14 +52,13 @@ MIT © [ReadMe](https://readme.com)
 
 <!-- References -->
 
-[html]: https://en.wikipedia.org/wiki/HTML
-[OpenAPI]: https://en.wikipedia.org/wiki/OpenAPI_Specification
 [node-url]: https://nodejs.org/en/
+[npm-url]: https://npmjs.org/package/openapi-workshop
+[OpenAPI]: https://en.wikipedia.org/wiki/OpenAPI_Specification
+[repo-url]: https://github.com/readmeio/openapi-workshop
 
 <!-- Badges -->
 
-[npm-url]: https://npmjs.org/package/openapi-workshop
-[npm-image]: https://img.shields.io/npm/v/openapi-workshop.svg?style=flat-square
-
-[node-url]: https://nodejs.org/en/download/
+[ci-image]: https://img.shields.io/github/workflow/status/readmeio/openapi-workshop/CI?style=flat-square
 [node-image]: https://img.shields.io/node/v/openapi-workshop.svg?style=flat-square
+[npm-image]: https://img.shields.io/npm/v/openapi-workshop.svg?style=flat-square
