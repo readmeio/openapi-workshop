@@ -40,14 +40,14 @@ module.exports = dirname => {
         console.log('Congrats! You did it! 🎉'.green);
         console.log('');
 
-        if (meta?.doc) {
-          console.log('See how it renders as a guide on ReadMe:', meta.doc.blue);
+        if (meta?.preview) {
+          console.log('See how it renders as a guide on ReadMe:', meta.preview.blue);
           console.log('');
+        }
 
-          if (meta?.aside) {
-            console.log(meta.aside);
-            console.log('');
-          }
+        if (meta?.aside) {
+          console.log(meta.aside);
+          console.log('');
         }
 
         return done(true);
