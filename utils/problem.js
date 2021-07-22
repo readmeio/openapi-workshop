@@ -29,7 +29,7 @@ module.exports = dirname => {
           console.log('❌ Oops!'.red);
           errors.forEach(error => console.log(error.red));
 
-          if (meta?.hint) {
+          if (meta.hint) {
             console.log('');
             console.log('🙋🏼‍♀️ Do you need a hint? If so, use this link for the answer:', meta.hint.blue);
           }
@@ -40,12 +40,12 @@ module.exports = dirname => {
         console.log('Congrats! You did it! 🎉'.green);
         console.log('');
 
-        if (meta?.preview) {
+        if (meta.preview) {
           console.log('See how it renders as a guide on ReadMe:', meta.preview.blue);
           console.log('');
         }
 
-        if (meta?.aside) {
+        if (meta.aside) {
           console.log(meta.aside);
           console.log('');
         }
