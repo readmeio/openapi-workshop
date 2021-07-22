@@ -1,3 +1,5 @@
+[![](https://d3vv6lp55qjaqc.cloudfront.net/items/1M3C3j0I0s0j3T362344/Untitled-2.png)](https://readme.com)
+
 ![OpenAPI Workshop](./preview.png)
 
 # OpenAPI Workshop
@@ -17,18 +19,15 @@ It's kinda strange, but many people still don't know Markdown, although there is
 
 This workshopper has easy and clear tasks that cover the most important aspects of OAS.
 
-* **HELLO WORLD** — the brief history of Markdown.
-* **HEADINGS** — how to use headings.
-* **EMPHASIS** — how you mark some text as important.
-* **LISTS** — creating of ordered and unordered lists.
-* **LINKS** — inline and reference links.
-* **IMAGES** — how to embed images.
-* **BLOCKQUOTES** — how to paste blockquotes.
-* **CODE** — inline code and blocks of code with syntax highlighting.
-* **TABLES** — creating tables.
-* **HORIZONTAL RULES** — how to split information using horizontal rules.
-* **HTML** — using HTML in a Markdown document.
-* **GFM** — useful things in [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+* **Basic Structure** — Overview of the skeletal structure of OAS
+* **POST Endpoints** — Learn how to define a POST endpoint
+* **POST requestBody** — Learn about the POST requestBody structure
+* **POST response** — Learn about the POST response
+* **GET Endpoints** — Learn how to define a GET endpoint
+* **$refs** — Learn how to use `$ref` in OAS
+* **Server Variables** — Build dynamic URLs for your API with Server Variables
+* **anyOf, allOf** — Build complex schemas with `anyOf` and `allOf`
+
 
 ## Requirements
 
