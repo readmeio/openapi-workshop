@@ -23,7 +23,7 @@
     "openapi",
     "oas"
   ],
-  "author": "Jon Ursenbach <jon@ursenba.ch>",
+  "author": "Sean Dokko <seandokko.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/readmeio/openapi-workshop/issues"
