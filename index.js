@@ -2,7 +2,7 @@ const workshopper = require('workshopper-adventure');
 const path = require('path');
 const header = require('workshopper-adventure/default/header');
 const fs = require('fs');
-const fsPromises = require('fs/promises');
+const fsPromises = require('fs').promises;
 const pkg = require('./package.json');
 
 const workshop = workshopper({
