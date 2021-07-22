@@ -22,7 +22,7 @@ const workshop = workshopper({
   ],
 });
 
-workshop.addAll([
+const exercises = [
   '1 WELCOME',
   '2 WARM UP TITLES',
   '3 DEFINING A POST ENDPOINT',
@@ -34,14 +34,32 @@ workshop.addAll([
   '9 SERVER VARIABLES',
   '10 ANYOF ALLOF',
   '11 FIN',
-]);
+];
+
+workshop.addAll(exercises);
 
 const { selectExercise } = workshop;
 
 workshop.selectExercise = async (...args) => {
   selectExercise.apply(workshop, args);
-  const [exercise] = args;
-  const filename = path.join(__dirname, 'exercises', exercise.replace(/\s/g, '_'), `template.json`);
+
+  let [exercise] = args;
+  exercise = exercise.trim().replace(/\s/g, '_');
+
+  let exerciseName = exercises.find(name => {
+    return name.replace(/\s/g, '_').toLowerCase() === exercise.toLowerCase();
+  });
+
+  if (!exerciseName) {
+    exerciseName = exercises[exercise - 1];
+    if (!exerciseName) {
+      throw new Error('Unknown exercise supplied.');
+    }
+  }
+
+  exerciseName = exerciseName.replace(/\s/g, '_');
+
+  const filename = path.join(__dirname, 'exercises', exerciseName, `template.json`);
   try {
     // eslint-disable-next-line no-bitwise
     await fsPromises.access('answers/', fs.constants.R_OK | fs.constants.W_OK);
@@ -49,7 +67,7 @@ workshop.selectExercise = async (...args) => {
     await fsPromises.mkdir('answers');
   }
 
-  fs.copyFile(filename, `answers/${exercise.replace(/\s/g, '_').toLowerCase()}.json`, err => {
+  fs.copyFile(filename, `answers/${exerciseName.toLowerCase()}.json`, err => {
     if (err) throw err;
   });
 };
