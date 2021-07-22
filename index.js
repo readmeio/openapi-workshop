@@ -3,14 +3,21 @@ const path = require('path');
 const header = require('workshopper-adventure/default/header');
 const fs = require('fs');
 const fsPromises = require('fs/promises');
+const pkg = require('./package.json');
 
 const workshop = workshopper({
   appDir: __dirname,
+  appRepo: pkg.homepage,
   languages: ['en'],
   header,
   footer: [
     {
       file: path.join(__dirname, 'i18n', 'footer', '{lang}.md'),
+    },
+  ],
+  help: [
+    {
+      file: path.join(__dirname, 'i18n', 'usage', '{lang}.md'),
     },
   ],
 });
