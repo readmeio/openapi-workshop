@@ -1,23 +1,21 @@
-![how-to-markdown](./preview.png)
+![OpenAPI Workshop](./preview.png)
 
-# how-to-markdown
+# OpenAPI Workshop
 
 [![NPM version][npm-image]][npm-url]
 [![node][node-image]][node-url]
-[![Dependency Status][depstat-image]][depstat-url]
-[![Build Status][buildstat-image]][buildstat-url]
 
-> Learn how to start using Markdown.
+> Learn how to use the OpenAPI Specification
 
 It's kinda strange, but many people still don't know Markdown, although there is nothing hard about this amazing tool. This workshopper will teach you how to use Markdown.
 
-> **Markdown** is a _lightweight markup language_ with plain text formatting syntax designed so that it can be converted to [HTML] and many other formats using a tool by the same name.
+> **OAS** is a specification for machine-readable interface files for describing, producing, consuming, and visualizing RESTful web services
 >
-> — about [Markdown] at **Wikipedia**
+> — about [OpenAPI] at **Wikipedia**
 
 ## Exercises
 
-This workshopper has 12 easy and clear tasks that cover the most important aspects of Markdown.
+This workshopper has easy and clear tasks that cover the most important aspects of OAS.
 
 * **HELLO WORLD** — the brief history of Markdown.
 * **HEADINGS** — how to use headings.
@@ -34,43 +32,36 @@ This workshopper has 12 easy and clear tasks that cover the most important aspec
 
 ## Requirements
 
-If you are on Windows, make sure you are using at least version 5.1.0 of Node.js, which provides a fix for a bug in Windows where you can't choose items in the menu.
+If you are on Windows, make sure you are using at least version 14.17.3 LTS of Node.js
 
-* [**Node.js**](node-url) >=4.0.0 (>=5.1.0 for Windows)
+* [**Node.js**](node-url) >=14.17.3
 
 ## Installation
 
 Open your terminal and run this command:
 
-    npm install -g how-to-markdown
-
-Use `sudo` if you get an `EACCESS` error.
+    npm install -g openapi-workshop
 
 ## Usage
 
 Open your terminal and run the following command:
 
-    how-to-markdown
+    openapi-workshop
 
 ## License
 
-MIT © [Denys Dovhan](http://denysdovhan.com)
+MIT © [ReadMe](https://readme.com)
 
 <!-- References -->
 
 [html]: https://en.wikipedia.org/wiki/HTML
-[markdown]: https://en.wikipedia.org/wiki/Markdown
+[OpenAPI]: https://en.wikipedia.org/wiki/OpenAPI_Specification
+[node-url]: https://nodejs.org/en/
 
 <!-- Badges -->
 
-[npm-url]: https://npmjs.org/package/how-to-markdown
-[npm-image]: https://img.shields.io/npm/v/how-to-markdown.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/openapi-workshop
+[npm-image]: https://img.shields.io/npm/v/openapi-workshop.svg?style=flat-square
 
 [node-url]: https://nodejs.org/en/download/
-[node-image]: https://img.shields.io/node/v/how-to-markdown.svg?style=flat-square
-
-[depstat-url]: https://david-dm.org/workshopper/how-to-markdown
-[depstat-image]: https://david-dm.org/workshopper/how-to-markdown.svg?style=flat-square
-
-[buildstat-url]: https://travis-ci.org/workshopper/how-to-markdown
-[buildstat-image]: https://img.shields.io/travis/workshopper/how-to-markdown.svg?style=flat-square
+[node-image]: https://img.shields.io/node/v/openapi-workshop.svg?style=flat-square
