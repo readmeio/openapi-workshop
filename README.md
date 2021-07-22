@@ -7,9 +7,7 @@
 [![NPM version][npm-image]][npm-url]
 [![node][node-image]][node-url]
 
-> Learn how to use the OpenAPI Specification the easy way
-
-It's kinda strange, but many people still don't know Markdown, although there is nothing hard about this amazing tool. This workshopper will teach you how to use Markdown.
+**✨ Learn how to use the OpenAPI Specification the easy way! ✨**
 
 > **OAS** is a specification for machine-readable interface files for describing, producing, consuming, and visualizing RESTful web services
 >

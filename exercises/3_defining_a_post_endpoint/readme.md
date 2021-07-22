@@ -1,4 +1,4 @@
-Now we’re going to define a **POST** endpoint. In “paths” , add a key called `"/hoot"` and add this object:
+Now we’re going to define a **POST** endpoint. In “paths” , add a key called `"/hoot"` (if you're over the whole owl bit, we sincerely apologize but sadly you'll have to roll with it) and add this object:
 
 ```
 {

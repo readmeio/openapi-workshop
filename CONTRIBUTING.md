@@ -1,6 +1,6 @@
 # Contributing
 
-Code contributions are welcome and highly encouraged! For instructions on and help with creating a great pull request, please read the [workshopper contributing document](https://github.com/workshopper/org/blob/master/CONTRIBUTING.md).
+Code contributions are welcome and highly encouraged! For instructions on and help with creating a great pull request, please read the [ReadMe contributing document](https://github.com/readmeio/org/blob/master/CONTRIBUTING.md).
 
 If you have questions about contributing, please create an issue.
 
@@ -9,8 +9,8 @@ If you have questions about contributing, please create an issue.
 The role of lead maintainers is to triage and categorize issues, answer questions about contributing to the repository, review and give feedback on PRs, and maintain the quality of a workshopper's codebase and repository.
 
 **Current Lead Maintainers**
-- Denys Dovhan [@denysdovhan](https://github.com/denysdovhan)
-- Seth [@itzsaga](https://github.com/itzsaga)
+- Sean Dokko [@dok](https://github.com/dok)
+- Jon Ursenbach [@erunion](https://github.com/erunion)
 
 ### Volunteer
 
