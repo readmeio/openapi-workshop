@@ -8,7 +8,6 @@ module.exports = dirname => {
 
   exports.init = function init() {
     this.problem = { file: path.join(dirname, `readme.md`) };
-    this.solution = require(`${dirname}/solution.js`);
     this.troubleshooting = path.join(__dirname, '..', 'i18n', 'troubleshooting', `readme.md`);
   };
 
@@ -21,7 +20,8 @@ module.exports = dirname => {
     oas
       .validate()
       .then(() => {
-        const errors = this.solution(attempt);
+        const solution = require(`${dirname}/solution.js`);
+        const errors = solution(attempt);
 
         const meta = require(`${dirname}/meta`);
 
@@ -36,11 +36,17 @@ module.exports = dirname => {
           return done(false);
         }
 
-        console.log('Congrats! You did it! 🎉 You can now move onto the next step.'.green);
+        console.log('Congrats! You did it! 🎉'.green);
         console.log('');
 
         if (meta?.doc) {
-          console.log('📄 See how it renders as a doc: ', meta.doc);
+          console.log('See how it renders as a guide on ReadMe:', meta.doc.blue);
+          console.log('');
+
+          if (meta?.aside) {
+            console.log(meta.aside);
+            console.log('');
+          }
         }
 
         return done(true);
@@ -50,9 +56,11 @@ module.exports = dirname => {
           "❌ Oops! Validation Failure. If you have an account with us, you can shoot us a message on Intercom (just kidding don't do this)"
             .red
         );
+
         if (typeof err !== 'undefined') {
           console.log(JSON.stringify(err, null, 2));
         }
+
         return done(false);
       });
   };

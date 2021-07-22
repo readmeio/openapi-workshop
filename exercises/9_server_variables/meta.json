@@ -1,4 +1,5 @@
 {
   "hint": "https://raw.githubusercontent.com/readmeio/oas-examples/main/3.0/json/openapi-workshop/server-variables.json",
-  "doc": "https://preview.readme.io/reference/get_hoot-id?url=https://raw.githubusercontent.com/readmeio/oas-examples/main/3.0/json/openapi-workshop/server-variables.json. You can also change the {basePath} value in the API Explorer! Try it out!"
+  "doc": "https://preview.readme.io/reference/get_hoot-id?url=https://raw.githubusercontent.com/readmeio/oas-examples/main/3.0/json/openapi-workshop/server-variables.json.",
+  "aside": "You can also change the {basePath} value in the API Explorer! Try it out!"
 }

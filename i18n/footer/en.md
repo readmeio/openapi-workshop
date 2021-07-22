@@ -1,3 +1,3 @@
 - To print these instructions again, run: `{appname} print`
-- To verify your program, run: `{appname} verify answers/{exercise}.json`
-- For help run: `{appname} help`
+- To check your answer: `{appname} verify answers/{exercise}.json`
+- For help: `{appname} help`

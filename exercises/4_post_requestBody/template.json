@@ -35,7 +35,10 @@
                     "type": "string",
                     "description": "The under-280-character content you want to hoot"
                   },
-                  "replyto": "{ YOUR ANSWER HERE }"
+                  "replyto": {
+                    "type": "string",
+                    "description": "Optional ID of the hoot you’re replying to"
+                  }
                 }
               }
             }
@@ -46,11 +49,7 @@
             "basicAuth": []
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          }
-        }
+        "responses": "{ YOUR ANSWER HERE }"
       }
     }
   },

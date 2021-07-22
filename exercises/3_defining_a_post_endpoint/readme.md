@@ -1,4 +1,4 @@
-Now we’re going to define a **POST** endpoint. In “paths” , add a key called `"/hoot"` and add this object:
+Now we're going to define a **POST** endpoint. In "paths" , add a key called `"/hoot"` and add this JSON object:
 
 ```
 {
@@ -21,8 +21,8 @@ Now we’re going to define a **POST** endpoint. In “paths” , add a key call
 }
 ```
 
-
 Here is a cutout of what the starter template looks like:
+
 ```
 {
 ...
@@ -33,14 +33,14 @@ Here is a cutout of what the starter template looks like:
       "name": "ISC"
     }
   },
-  "paths": {
-    "/hoot": "{ YOUR ANSWER HERE }"
-  },
   "servers": [
     {
       "url": "https://hoot.at/api"
     }
   ],
+  "paths": {
+    "/hoot": "{ YOUR ANSWER HERE }"
+  },
 ...
 }
 ```
