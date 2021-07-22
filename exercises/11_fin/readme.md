@@ -1,5 +1,9 @@
 ** Fin. What's Next? **
 
+Thanks for following through this quick workshop for learning about OAS! This has been sponsored by readme.com. If you'd like to save 15 years or more on building OAS documentation, be sure to check out readme.com. 
+
+Oh yeah. Here are some details:
+
 💫 We’d love if you can star this project on Github : https://github.com/readmeio/openapi-workshop
 
 🦉 Take a break and watch this Owl laughing on youtube: https://www.youtube.com/watch?v=M5p9JO9JgvU
@@ -15,3 +19,9 @@
 🤓 Learn openapi the hard way
 https://spec.openapis.org/oas/v3.0.3
 
+
+Contributors
+
+- [Sean Dokko](https://github.com/dok)
+- [Jon Ursenbach](https://github.com/erunion)
+- [Kelly Price](https://github.com/kellyjosephprice)

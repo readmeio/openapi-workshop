@@ -6,3 +6,23 @@ What is **anyOf, allOf?**
 
 Side note: We started supporting anyOf,allOf about a year ago! https://docs.readme.com/changelog/api-explorer-v6-allof-support-better-errors-and-more
 
+
+```
+{
+...
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": "{ YOUR ANSWER HERE }"
+              }
+            }
+          },
+          "404": {
+            "description": "hoot not found"
+          }
+        },
+...
+}
+```

@@ -3,3 +3,21 @@
 **Instruction: create a server variable called “basePath” that has a default value of “api” and refer back to it in servers[0].url.**
 
 Side note: We wrote a blog about this topic a while back https://blog.readme.com/basic-oas-server-variables-support/
+
+```
+{
+...
+  },
+  "servers": [
+    "{ YOUR ANSWER HERE }"
+  ],
+  "components": {
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+...
+}
+```

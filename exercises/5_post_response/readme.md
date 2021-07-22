@@ -2,4 +2,27 @@ Now we’re going to look at the response parameters. It’s to note what kind o
 
 **Instruction: Let’s create the response so that we return a 200 for it. Bonus points for a 403 invalid response.**
 
-No gimmie’s this time. Figure it out! 
+```
+{
+...
+                    "type": "string",
+                    "description": "Optional id of the hoot you're replying to"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "responses": "{ YOUR ANSWER HERE }"
+      }
+    }
+  },
+  "servers": [
+...
+}
+```

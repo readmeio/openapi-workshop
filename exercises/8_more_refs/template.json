@@ -119,8 +119,9 @@
         }
       },
       "Squawk": "{ YOUR ANSWER HERE }"
-  },
-  "x-readme": {
-    "explorer-enabled": true
+    },
+    "x-readme": {
+      "explorer-enabled": true
+    }
   }
 }
