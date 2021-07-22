@@ -1,8 +1,8 @@
 ### Warm Up Round: Changing a title in an OpenAPI definition
 
-This one's gonna be an easy one. We want you to change the title of the OpenAPI definition file. This is more of a warm up round so you understand the mechanics of how this workshop works. Below, you'll be given instructions for each exercise. You'll also be given a starter JSON file. You can run the exercise against your work by running `openapi-workshop verify answers/1_title.json` in your terminal.
+We're going to start out with a pretty easy example. We want you to change the title of the OpenAPI definition file. This is more of a warm-up round so you understand the mechanics of how this workshop works (and, if you need it, some positive affirmation that you can do this!). Below, you’ll be given instructions for each exercise. You’ll also be given a starter JSON file. You can run the exercise against your work by running `openapi-workshop verify answers/2_warm_up_titles.json` in your terminal.
 
-We have the basic template here with the title of "Hoot". You'll be given a copy of this to edit under the `/answers` directory.
+We have the basic template here. And the title is "Hoot"! 🦉 You'll be given a copy of this to edit under the `/answers` directory.
 
 ```
 {
