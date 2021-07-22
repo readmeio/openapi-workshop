@@ -63,12 +63,12 @@ workshop.selectExercise = async (...args) => {
   const filename = path.join(__dirname, 'exercises', exerciseName, `template.json`);
   const answersDir = path.join(__dirname, 'answers');
 
-  try {
-    // eslint-disable-next-line no-bitwise
-    await fsPromises.access(answersDir, fs.constants.R_OK | fs.constants.W_OK);
-  } catch (e) {
+  if (!fs.existsSync(answersDir)) {
     await fsPromises.mkdir(answersDir);
   }
+
+  // eslint-disable-next-line no-bitwise
+  await fsPromises.access(answersDir, fs.constants.R_OK | fs.constants.W_OK);
 
   fs.copyFile(filename, path.join(answersDir, `${exerciseName.toLowerCase()}.json`), err => {
     if (err) throw err;
