@@ -1,6 +1,15 @@
-
 {
   "openapi": "3.0.0",
+  "x-api-id": "hoot-test",
+  "x-proxy-enabled": true,
+  "x-samples-enabled": true,
+  "x-samples-languages": [
+    "curl",
+    "node-simple",
+    "ruby",
+    "javascript",
+    "python"
+  ],
   "info": {
     "version": "1.0",
     "title": "Hoot",
@@ -8,11 +17,25 @@
       "name": "ISC"
     }
   },
-  "servers": [
-  ],
   "paths": {
+    "/hoot": "{ YOUR ANSWER HERE }"
   },
+  "servers": [
+    {
+      "url": "https://hoot.at/api"
+    }
+  ],
   "components": {
-
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    },
+    "schemas": {
+    }
+  },
+  "x-readme": {
+    "explorer-enabled": true
   }
 }
