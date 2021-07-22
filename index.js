@@ -61,14 +61,16 @@ workshop.selectExercise = async (...args) => {
   exerciseName = exerciseName.toLowerCase().replace(/\s/g, '_');
 
   const filename = path.join(__dirname, 'exercises', exerciseName, `template.json`);
+  const answersDir = path.join(__dirname, 'answers');
+
   try {
     // eslint-disable-next-line no-bitwise
-    await fsPromises.access('answers/', fs.constants.R_OK | fs.constants.W_OK);
+    await fsPromises.access(answersDir, fs.constants.R_OK | fs.constants.W_OK);
   } catch (e) {
-    await fsPromises.mkdir('answers');
+    await fsPromises.mkdir(answersDir);
   }
 
-  fs.copyFile(filename, `answers/${exerciseName.toLowerCase()}.json`, err => {
+  fs.copyFile(filename, path.join(answersDir, `${exerciseName.toLowerCase()}.json`), err => {
     if (err) throw err;
   });
 };
