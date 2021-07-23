@@ -11,9 +11,6 @@ const workshop = workshopper({
   exerciseDir: path.join(__dirname, 'exercises'),
   languages: ['en'],
   header,
-  menu: {
-    width: 100,
-  },
   footer: [
     {
       file: path.join(__dirname, 'i18n', 'footer', '{lang}.md'),
