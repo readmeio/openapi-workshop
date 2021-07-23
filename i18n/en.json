@@ -1,3 +1,135 @@
 {
-  "title": "openapi-workshop"
+  "title": "openapi-workshop",
+  "common": {
+    "exercise": {
+      "pass": {
+        "success": "Congrats! You did it! 🎉",
+        "preview": "See how it renders as a guide on ReadMe: {{link}}"
+      },
+      "fail": {
+        "hint": "🙋🏼‍♀️ Do you need a hint? If so, use this link for the answer: {{link}}",
+        "missingPaths": "Your API definition appears to be missing the following path pointer(s):\n{{paths}}",
+        "validation": "Oh no there's a validation issue with your API definition. 🙁\n\nIf you have an account with us, you can shoot us a message on Intercom (just kidding don't do this).\n\n```\n{{error}}\n```"
+      }
+    }
+  },
+  "exercises": {
+    "ANYOF ALLOF": {
+      "pass": {
+        "preview": "https://preview.readme.io/reference/get_hoot-id?url=https://raw.githubusercontent.com/readmeio/oas-examples/main/3.0/json/openapi-workshop/anyOf-allOf.json",
+        "aside": ""
+      },
+      "fail": {
+        "hint": "https://raw.githubusercontent.com/readmeio/oas-examples/main/3.0/json/openapi-workshop/anyOf-allOf.json"
+      }
+    },
+    "DEFINING A GET ENDPOINT": {
+      "pass": {
+        "preview": "https://preview.readme.io/reference/get_hoot-id?url=https://raw.githubusercontent.com/readmeio/oas-examples/main/3.0/json/openapi-workshop/get.json",
+        "aside": ""
+      },
+      "fail": {
+        "hint": "https://raw.githubusercontent.com/readmeio/oas-examples/main/3.0/json/openapi-workshop/get.json"
+      }
+    },
+    "DEFINING A POST ENDPOINT": {
+      "pass": {
+        "preview": "",
+        "aside": ""
+      },
+      "fail": {
+        "hint": "https://raw.githubusercontent.com/readmeio/oas-examples/main/3.0/json/openapi-workshop/post.json",
+        "title": "Your `/hoot` POST operation is missing a `description`."
+      }
+    },
+    "FIN": {
+      "pass": {
+        "preview": "",
+        "aside": ""
+      },
+      "fail": {
+        "hint": ""
+      }
+    },
+    "MORE REFS": {
+      "pass": {
+        "preview": "https://preview.readme.io/reference/get_hoot-id?url=https://raw.githubusercontent.com/readmeio/oas-examples/main/3.0/json/openapi-workshop/additional-ref.json",
+        "aside": ""
+      },
+      "fail": {
+        "hint": "https://raw.githubusercontent.com/readmeio/oas-examples/main/3.0/json/openapi-workshop/additional-ref.json"
+      }
+    },
+    "POST RESPONSE": {
+      "pass": {
+        "preview": "https://preview.readme.io/?url=https://raw.githubusercontent.com/readmeio/oas-examples/main/3.0/json/openapi-workshop/post-responses.json",
+        "aside": ""
+      },
+      "fail": {
+        "hint": "https://raw.githubusercontent.com/readmeio/oas-examples/main/3.0/json/openapi-workshop/post-responses.json"
+      }
+    },
+    "POST REQUESTBODY": {
+      "pass": {
+        "preview": "https://preview.readme.io/?url=https://raw.githubusercontent.com/readmeio/oas-examples/main/3.0/json/openapi-workshop/post-requestBody.json",
+        "aside": ""
+      },
+      "fail": {
+        "hint": "https://raw.githubusercontent.com/readmeio/oas-examples/main/3.0/json/openapi-workshop/post-requestBody.json",
+        "missingReplyto": "Your `requestBody` is missing a `replyto` property.",
+        "missingType": "Your `replyto` property is missing a `type`.",
+        "missingDescription": "Your `replyto` property is missing a `description`."
+      }
+    },
+    "REFS": {
+      "pass": {
+        "preview": "https://preview.readme.io/reference/get_hoot-id?url=https://raw.githubusercontent.com/readmeio/oas-examples/main/3.0/json/openapi-workshop/refs.json",
+        "aside": ""
+      },
+      "fail": {
+        "hint": "https://raw.githubusercontent.com/readmeio/oas-examples/main/3.0/json/openapi-workshop/refs.json"
+      }
+    },
+    "SERVER VARIABLES": {
+      "pass": {
+        "preview": "https://preview.readme.io/reference/get_hoot-id?url=https://raw.githubusercontent.com/readmeio/oas-examples/main/3.0/json/openapi-workshop/server-variables.json.",
+        "aside": "You can also change the `{basePath}` value in the API Explorer! Try it out!"
+      },
+      "fail": {
+        "hint": "https://raw.githubusercontent.com/readmeio/oas-examples/main/3.0/json/openapi-workshop/server-variables.json"
+      }
+    },
+    "WELCOME": {
+      "pass": {
+        "preview": "",
+        "aside": ""
+      },
+      "fail": {
+        "hint": ""
+      }
+    },
+    "WARM UP TITLES": {
+      "pass": {
+        "preview": "",
+        "aside": ""
+      },
+      "fail": {
+        "hint": "",
+        "title": "`title` is wrong! You entered \"{{title}}\", when it should have been \"Hoot Hoot\"."
+      }
+    }
+  },
+  "ui": {
+    "advance": "To continue to the next exercise run: `{appname} next`",
+    "return": ""
+  },
+  "progress": {
+    "reset": "{{title}} progress reset",
+    "finished": "You've finished all the exercises! Hooray!\n",
+    "state": "Exercise {{count}} of {{amount}}",
+    "remaining": {
+      "one": "You have one exercise left.",
+      "other": "You have {{count}} exercises left."
+    }
+  }
 }

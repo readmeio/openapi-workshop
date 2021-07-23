@@ -1,1 +1,3 @@
-module.exports = require('../../utils/problem')(__dirname);
+module.exports = require('../../utils/execute')(__dirname, () => {
+  return [true, []];
+});
