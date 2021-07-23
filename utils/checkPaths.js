@@ -2,22 +2,23 @@
 const get = require('lodash.get');
 
 module.exports = function (obj, paths) {
-  if (obj.translateAbs) return [];
+  const missingPaths = new Set();
 
-  const messages = [];
+  paths.forEach(path => {
+    let cumulativePath = '';
+    for (const leaf of path.split('.')) {
+      if (!cumulativePath) {
+        cumulativePath = leaf;
+      } else {
+        cumulativePath += `.${leaf}`;
+      }
 
-  let cumulativePath = '';
-  for (const path of paths) {
-    if (!cumulativePath) {
-      cumulativePath = path;
-    } else {
-      cumulativePath += `.${path}`;
+      if (!get(obj, cumulativePath)) {
+        missingPaths.add(cumulativePath);
+        break;
+      }
     }
-    if (!get(obj, cumulativePath)) {
-      messages.push(`You haven't specified the '${cumulativePath}' path!`);
-      break;
-    }
-  }
+  });
 
-  return messages;
+  return [...missingPaths];
 };

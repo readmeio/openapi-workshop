@@ -4,7 +4,7 @@ We're going to give you a starter template for what the requestBody should look 
 
 ### 👩‍🏫 Instructions
 
-Build out the "replyTo" property with a "string" type and "Optional ID of the hoot you’re replying to" description.
+Build out the "replyto" property with a "string" type and "Optional ID of the hoot you’re replying to" description.
 
 Here is an example of the "post" property:
 
