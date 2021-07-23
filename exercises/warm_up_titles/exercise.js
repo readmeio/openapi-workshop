@@ -1,4 +1,4 @@
-const exercise = require('../../utils/execute');
+const exercise = require('../../lib/execute');
 
 exercise.addSetup(function (mode, cb) {
   const apiDefinition = this.apiDefinition;

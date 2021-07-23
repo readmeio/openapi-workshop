@@ -3,9 +3,12 @@ const path = require('path');
 const header = require('workshopper-adventure/default/header');
 const pkg = require('./package.json');
 
+const printCommand = require('./lib/commands/print');
+
 const workshop = workshopper({
   appDir: __dirname,
   appRepo: pkg.homepage,
+  commands: [printCommand],
   exerciseDir: path.join(__dirname, 'exercises'),
   languages: ['en'],
   header,
