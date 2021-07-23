@@ -1,79 +1,111 @@
 require('colors');
 
 const exercise = require('workshopper-exercise')();
+const path = require('path');
 const fs = require('fs');
+const fsPromises = require('fs').promises;
 const OASNormalize = require('oas-normalize');
 
-module.exports = problemExecutor => {
-  exercise.addPrepare(cb => {
-    // Overload the workshopper options to forcefully allow us to embed the current exercise id (eg.
-    // `2_warm_up_titles.json`) in our footer.
-    exercise.workshopper.options.exerciseId = exercise.id;
-    cb(null, true);
-  });
+exercise.addPrepare(async function (cb) {
+  // If this exercise has a template to work through copy it over for the user. If it doesn't it's probably just an
+  // informational exercise.
+  const template = path.join(this.dir, 'template.json');
+  if (fs.existsSync(template)) {
+    const answersDir = path.join(process.cwd(), 'answers');
 
-  exercise.addVerifyProcessor(cb => {
-    const filename = exercise.args[0];
-    const attempt = JSON.parse(fs.readFileSync(filename, 'utf8'));
-    const oas = new OASNormalize(attempt);
+    try {
+      // eslint-disable-next-line no-bitwise
+      await fsPromises.access(answersDir, fs.constants.R_OK | fs.constants.W_OK);
+    } catch (e) {
+      await fsPromises.mkdir(answersDir);
+    }
 
-    const shop = exercise.workshopper;
-
-    oas
-      .validate()
-      .then(apiDefinition => {
-        const [pass, errors] = problemExecutor(exercise, apiDefinition);
-        if (pass) {
-          // Since the user completed the assignment we should show them a contextual footer for advancing to the next
-          // exercise instead of re-playing what they just finished.
-          shop.options.footer = [shop.__('ui.advance')];
-
-          exercise.emit('pass', [
-            // You did it! You're doing it!
-            shop.__('common.exercise.pass.success'),
-
-            // Reference guide preview links.
-            exercise.__.has('pass.preview')
-              ? shop.__('common.exercise.pass.preview', { link: exercise.__('pass.preview') })
-              : null,
-
-            // Success aside messages.
-            exercise.__.has('pass.aside') ? exercise.__('pass.aside') : null,
-          ]);
-
-          return cb(null, true);
-        }
-
-        if (exercise.__.has('fail.hint') && exercise.__('fail.hint').length > 0) {
-          errors.push(
-            shop.__('common.exercise.fail.hint', {
-              link: exercise.__('fail.hint').blue,
-            })
-          );
-        }
-
-        exercise.emit('fail', errors);
-
-        return cb(null, false);
-      })
-      .catch(err => {
-        if ('full' in err) {
-          // OAS validation errors
-          exercise.emit('fail', shop.__('common.exercise.fail.validation', { error: err.full.message }));
-          return cb(null, false);
-        } else if (err.name === 'MissingPointerError') {
-          // JSON pointer validation errors
-          exercise.emit(
-            'fail',
-            shop.__('common.exercise.fail.validation', { error: err.message.replace(/"/g, '`').reset })
-          );
-
-          return cb(null, false);
-        }
-
+    const answer = path.join(answersDir, `${this.id}.json`);
+    if (!fs.existsSync(answer)) {
+      await fsPromises.copyFile(template, answer).catch(err => {
         throw err;
       });
-  });
+    }
+  }
 
-  return exercise;
-};
+  // Overload the workshopper options to forcefully allow us to embed the current exercise id (eg. `more_refs.json`)
+  // in our footer.
+  exercise.workshopper.options.exerciseId = exercise.id;
+  cb(null, true);
+});
+
+exercise.addSetup(function (mode, cb) {
+  const self = this;
+  const filename = this.args[0];
+  const attempt = JSON.parse(fs.readFileSync(filename, 'utf8'));
+  const oas = new OASNormalize(attempt);
+
+  oas
+    .validate()
+    .then(apiDefinition => {
+      self.apiDefinition = apiDefinition;
+      self.errors = [];
+
+      cb();
+    })
+    .catch(err => {
+      const shop = this.workshopper;
+
+      // OAS validation errors
+      if ('full' in err) {
+        exercise.emit('fail', shop.__('common.exercise.fail.validation', { error: err.full.message }));
+        return false;
+      }
+
+      // JSON pointer validation errors
+      if (err.name === 'MissingPointerError') {
+        exercise.emit(
+          'fail',
+          shop.__('common.exercise.fail.validation', { error: err.message.replace(/"/g, '`').reset })
+        );
+
+        return false;
+      }
+
+      throw err;
+    });
+});
+
+exercise.addVerifyProcessor(function (cb) {
+  const errors = this.errors;
+  const shop = this.workshopper;
+
+  if (errors.length) {
+    if (exercise.__.has('fail.hint') && exercise.__('fail.hint').length > 0) {
+      errors.push(
+        shop.__('common.exercise.fail.hint', {
+          link: exercise.__('fail.hint').blue,
+        })
+      );
+    }
+
+    exercise.emit('fail', errors);
+    return cb(null, true);
+  }
+
+  // Since the user completed the assignment we should show them a contextual footer for advancing to the next
+  // exercise instead of re-playing what they just finished.
+  shop.options.footer = [shop.__('ui.advance')];
+
+  exercise.emit('pass', [
+    // You did it! You're doing it!
+    shop.__('common.exercise.pass.success'),
+
+    // Reference guide preview links.
+    exercise.__.has('pass.preview')
+      ? shop.__('common.exercise.pass.preview', { link: exercise.__('pass.preview') })
+      : null,
+
+    // Success aside messages.
+    exercise.__.has('pass.aside') ? exercise.__('pass.aside') : null,
+  ]);
+
+  return cb(null, true);
+});
+
+module.exports = exercise;
