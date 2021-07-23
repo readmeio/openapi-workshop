@@ -10,9 +10,19 @@
 
 **✨ Learn how to use the OpenAPI Specification the easy way! ✨**
 
-> **OAS** is a specification for machine-readable interface files for describing, producing, consuming, and visualizing RESTful web services
+Do you want to create awesome APIs and documentation like [this](https://docs.readme.com/reference/getapispecification) or [this](https://developers.hoot.at/reference/post_hoot)? In this workshop, we'll equip you with the skills to do just that.
+
+We think learning OAS (OpenAPI Specification) is a great way to maintain an API for yourself and your team. OAS can allow you to maintain an API in a logical fashion, and will allow you to use some tooling to easily document your API for consumption. 
+
+But the learning curve is quite high. Usually, someone get's thrown into a complex OAS issue and they'll have to learn about it by fixing a bad bug. Hopefully, this structured series of exercises will help you build up some fundamental knowledge to get you started on your OAS journey. Or equip you with just enough knowledge to be dangerous 😈. 
+
+> **_Textbook definition:_** **OAS** (OpenAPI Specification) is a specification for machine-readable interface files for describing, producing, consuming, and visualizing RESTful web services
 >
 > — about [OpenAPI] at **Wikipedia**
+
+--------
+
+> **_Definition on the street:_** **OAS** (OpenAPI Specification) is a glorified JSON object that has a bunch of obscure rules that tells you how an API can be used.
 
 ## Exercises
 
@@ -45,6 +55,23 @@ Open your terminal and run this command:
 Open your terminal and run the following command:
 
     openapi-workshop
+
+
+Once you've selected an exercise. We create a directory in which you've run your command called `answers`, which will include the starter templates for you to begin each of the exercises. 
+
+You can verify your work by running the following:
+
+    openapi-workshop verify answers/welcome.json
+
+## Before Starting Out
+
+- You have to have a general understanding of what JSON is. If you need a primer, go [here](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) to read up more.
+- If you see a "{ YOUR ANSWER HERE }", it means that you should remove the string value from the JSON and replace it with an object containing your answer.
+- It will be helpful to understand the evaluation criteria. They are a combination of the following:
+    - Does it pass our validation? Is your answer a valid OAS spec? (Disclaimer: we may not validate an exercise at times for simplicity sake)
+    - Your answers are evaluated on whether some key/value pairs exist within the JSON object. 
+    - Sometimes, they are based on equality (does your key/value pair match exactly ours?)
+- If you fail, don't fret, you have ∞ number of tries. If you do fail the verification, we will give you some hints so you aren't stuck.
 
 ## License
 

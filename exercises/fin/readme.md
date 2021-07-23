@@ -1,6 +1,6 @@
 **Fin. What's Next?**
 
-Thanks for following through this quick workshop for learning about OpenAPi! This has been sponsored by ReadMe! 🦉 If you'd like to save 15 years (or more or less, depending on your commitment) on building API documentation, be sure to check out https://readme.com.
+Thanks for following through this quick workshop for learning about OpenAPI! This has been sponsored by ReadMe! 🦉 Now you are ready to take it to the next step; building documentation based on your OAS file. But if you'd like to save 15 years (more or less, depending on your commitment) on building API documentation, be sure to check out https://readme.com.
 
 Oh yeah. Here are some details:
 
