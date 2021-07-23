@@ -11,6 +11,9 @@ const workshop = workshopper({
   exerciseDir: path.join(__dirname, 'exercises'),
   languages: ['en'],
   header,
+  menu: {
+    width: 100,
+  },
   footer: [
     {
       file: path.join(__dirname, 'i18n', 'footer', '{lang}.md'),
@@ -24,17 +27,17 @@ const workshop = workshopper({
 });
 
 workshop.addAll([
-  '1 WELCOME',
-  '2 WARM UP TITLES',
-  '3 DEFINING A POST ENDPOINT',
-  '4 POST REQUESTBODY',
-  '5 POST RESPONSE',
-  '6 DEFINING A GET ENDPOINT',
-  '7 REFS',
-  '8 MORE REFS',
-  '9 SERVER VARIABLES',
-  '10 ANYOF ALLOF',
-  '11 FIN',
+  'WELCOME',
+  'WARM UP TITLES',
+  'DEFINING A POST ENDPOINT',
+  'POST REQUESTBODY',
+  'POST RESPONSE',
+  'DEFINING A GET ENDPOINT',
+  'REFS',
+  'MORE REFS',
+  'SERVER VARIABLES',
+  'ANYOF ALLOF',
+  'FIN',
 ]);
 
 const { selectExercise } = workshop;
