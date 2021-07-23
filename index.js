@@ -39,6 +39,7 @@ workshop.addAll([
 
 const { selectExercise } = workshop;
 
+// @fixme this doesn't get run with `openapi-workshop next`
 workshop.selectExercise = async (...args) => {
   selectExercise.apply(workshop, args);
 
@@ -69,7 +70,9 @@ workshop.selectExercise = async (...args) => {
     await fsPromises.mkdir(answersDir);
   }
 
-  fs.copyFile(filename, path.join(answersDir, `${exerciseName.toLowerCase()}.json`), err => {
+  // @fixme re-running the command to start the exercise or re-view the instructions will blow away the template that the user has. probably don't want to do that?
+  const answer = path.join(answersDir, `${exerciseName.toLowerCase()}.json`);
+  fs.copyFile(filename, answer, err => {
     if (err) throw err;
   });
 };

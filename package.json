@@ -36,7 +36,8 @@
     "colors": "^1.4.0",
     "lodash.get": "^4.4.2",
     "oas-normalize": "^3.0.3",
-    "workshopper-adventure": "^7.0.0"
+    "workshopper-adventure": "^7.0.0",
+    "workshopper-exercise": "^3.0.3"
   },
   "devDependencies": {
     "@readme/eslint-config": "^6.0.0",
