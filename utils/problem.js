@@ -6,9 +6,13 @@ require('colors');
 module.exports = dirname => {
   const exports = {};
 
-  exports.init = function init() {
+  exports.init = function init(shop, id) {
     this.problem = { file: path.join(dirname, `readme.md`) };
-    this.troubleshooting = path.join(__dirname, '..', 'i18n', 'troubleshooting', `readme.md`);
+
+    // Overload the workshopper options to forcefully allow us to embed the current exercise id (eg.
+    // `2_warm_up_titles.json`) in our footer.
+    // eslint-disable-next-line no-param-reassign
+    shop.options.exerciseId = id;
   };
 
   // Can't use async here because it will console.log [Object Promise]
