@@ -29,4 +29,4 @@ Through this workshop you'll be completing tidy little assignments and will lear
 
 So make some coffee or tea (not included in this tutorial, sadly), hunker down, and let’s get started!
 
-To complete this exercise, you can run `openapi-workshop verify answers/1_welcome.json`
+To complete this exercise, you can run `openapi-workshop verify answers/welcome.json`

@@ -10,7 +10,11 @@
 
 **✨ Learn how to use the OpenAPI Specification the easy way! ✨**
 
-> **OAS** is a specification for machine-readable interface files for describing, producing, consuming, and visualizing RESTful web services
+We think learning OAS is a great way to maintain an API for yourself and your team. OAS can allow you to maintain an API in a logical fashion, and will allow you to use some tooling to easily document your API for consumption. 
+
+But the learning curve is quite high. Usually, someone get's thrown into a complex OAS issue and they'll have to learn about it by fixing a bad bug. Hopefully, this structured series of exercises will help you build up some fundamental knowledge to get you started on your OAS journey. Or equip you with just enough knowledge to be dangerous 😈. 
+
+> **_Textbook definition:_** **OAS** (OpenAPI Specification) is a specification for machine-readable interface files for describing, producing, consuming, and visualizing RESTful web services
 >
 > — about [OpenAPI] at **Wikipedia**
 
@@ -45,6 +49,13 @@ Open your terminal and run this command:
 Open your terminal and run the following command:
 
     openapi-workshop
+
+
+Once you've selected an exercise. We create a directory in which you've run your command called `answers`, which will include the starter templates for you to begin each of the exercises. 
+
+You can verify your work by running the following:
+
+    openapi-workshop verify answers/welcome.json
 
 ## License
 
