@@ -1,3 +1,3 @@
-module.exports = require('../../utils/execute')(__dirname, () => {
+module.exports = require('../../utils/execute')(() => {
   return [true, []];
 });

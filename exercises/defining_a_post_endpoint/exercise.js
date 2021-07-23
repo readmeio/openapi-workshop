@@ -1,6 +1,6 @@
 const checkPaths = require('../../utils/checkPaths');
 
-module.exports = require('../../utils/execute')(__dirname, (exercise, apiDefinition) => {
+module.exports = require('../../utils/execute')((exercise, apiDefinition) => {
   const requiredPaths = checkPaths(apiDefinition, ['paths./hoot.post.description']);
 
   const errors = [

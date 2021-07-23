@@ -4,7 +4,7 @@ const exercise = require('workshopper-exercise')();
 const fs = require('fs');
 const OASNormalize = require('oas-normalize');
 
-module.exports = (dirname, problemExecutor) => {
+module.exports = problemExecutor => {
   exercise.addPrepare(cb => {
     // Overload the workshopper options to forcefully allow us to embed the current exercise id (eg.
     // `2_warm_up_titles.json`) in our footer.

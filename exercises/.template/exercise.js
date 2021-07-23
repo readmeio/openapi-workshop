@@ -1,4 +1,4 @@
-module.exports = require('../../utils/execute')(__dirname, (/* exercise, apiDefinition */) => {
+module.exports = require('../../utils/execute')(__dirname, (/* apiDefinition */) => {
   // If the exercise passed:
   // return [true, []];
 

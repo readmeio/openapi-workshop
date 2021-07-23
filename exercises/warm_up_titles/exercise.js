@@ -1,4 +1,4 @@
-module.exports = require('../../utils/execute')(__dirname, (exercise, apiDefinition) => {
+module.exports = require('../../utils/execute')((exercise, apiDefinition) => {
   let pass = true;
   const errors = [];
 
