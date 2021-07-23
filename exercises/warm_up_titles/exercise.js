@@ -1,11 +1,13 @@
-module.exports = require('../../utils/execute')((exercise, apiDefinition) => {
-  let pass = true;
-  const errors = [];
+const exercise = require('../../utils/execute');
+
+exercise.addSetup(function (mode, cb) {
+  const apiDefinition = this.apiDefinition;
 
   if (apiDefinition && apiDefinition.info && apiDefinition.info.title !== 'Hoot Hoot') {
-    pass = false;
-    errors.push(exercise.__('fail.title', { title: apiDefinition.info.title }));
+    this.errors.push(exercise.__('fail.title', { title: apiDefinition.info.title }));
   }
 
-  return [pass, errors];
+  cb();
 });
+
+module.exports = exercise;

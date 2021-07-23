@@ -1,7 +1,10 @@
-module.exports = require('../../utils/execute')(__dirname, (/* apiDefinition */) => {
-  // If the exercise passed:
-  // return [true, []];
+const exercise = require('../../utils/execute');
 
-  // On failures:
-  // return [false, [/* array of error messages */]];
+exercise.addSetup(function (mode, cb) {
+  // Process `this.apiDefinition` and look for errors and then push them to `this.errors`.
+
+  cb();
 });
+
+module.exports = exercise;
+
