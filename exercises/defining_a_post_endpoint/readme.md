@@ -21,7 +21,7 @@ Now we’re going to define a **POST** endpoint. In “paths”, add a key calle
 }
 ```
 
-Here is a cutout of what the starter template looks like:
+Here is a cutout of what the starter template looks like. Notice the "{ YOUR ANSWER HERE }", which means that section is specifically left out for you to replace and fill in with an object:
 
 ```
 {
