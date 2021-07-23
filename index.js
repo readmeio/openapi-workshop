@@ -8,6 +8,7 @@ const pkg = require('./package.json');
 const workshop = workshopper({
   appDir: __dirname,
   appRepo: pkg.homepage,
+  exerciseDir: path.join(__dirname, 'exercises'),
   languages: ['en'],
   header,
   footer: [
@@ -22,7 +23,7 @@ const workshop = workshopper({
   ],
 });
 
-const exercises = [
+workshop.addAll([
   '1 WELCOME',
   '2 WARM UP TITLES',
   '3 DEFINING A POST ENDPOINT',
@@ -34,9 +35,7 @@ const exercises = [
   '9 SERVER VARIABLES',
   '10 ANYOF ALLOF',
   '11 FIN',
-];
-
-workshop.addAll(exercises);
+]);
 
 const { selectExercise } = workshop;
 
@@ -46,12 +45,12 @@ workshop.selectExercise = async (...args) => {
   let [exercise] = args;
   exercise = exercise.trim().replace(/\s/g, '_');
 
-  let exerciseName = exercises.find(name => {
+  let exerciseName = workshop.exercises.find(name => {
     return name.replace(/\s/g, '_').toLowerCase() === exercise.toLowerCase();
   });
 
   if (!exerciseName) {
-    exerciseName = exercise === '0' ? exercises[0] : exercises[exercise - 1];
+    exerciseName = exercise === '0' ? workshop.exercises[0] : workshop.exercises[exercise - 1];
     if (!exerciseName) {
       throw new Error('Unknown exercise supplied.');
     }
