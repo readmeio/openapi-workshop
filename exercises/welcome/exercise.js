@@ -1,4 +1,4 @@
-const exercise = require('../../utils/execute');
+const exercise = require('../../lib/execute');
 
 exercise.addPrepare(function (cb) {
   const shop = this.workshopper;

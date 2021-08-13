@@ -1,5 +1,5 @@
-const exercise = require('../../utils/execute');
-const checkPaths = require('../../utils/checkPaths');
+const exercise = require('../../lib/execute');
+const checkPaths = require('../../lib/checkPaths');
 
 exercise.addSetup(function (mode, cb) {
   const apiDefinition = this.apiDefinition;
