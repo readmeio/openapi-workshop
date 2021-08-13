@@ -35,8 +35,21 @@ exercise.addPrepare(async function (cb) {
 });
 
 exercise.addSetup(function (mode, cb) {
-  const self = this;
+  this.skipVerify = false;
+  this.errors = [];
+
   const filename = this.args[0];
+  const template = path.join(this.dir, 'template.json');
+  if (!fs.existsSync(template)) {
+    // If this exercise doesn't have a template for the user to work out of then there's nothing we need to verify and
+    // we can skip OAS and exercise validation.
+    this.skipVerify = true;
+
+    cb();
+    return;
+  }
+
+  const self = this;
   const attempt = JSON.parse(fs.readFileSync(filename, 'utf8'));
   const oas = new OASNormalize(attempt);
 
@@ -44,7 +57,6 @@ exercise.addSetup(function (mode, cb) {
     .validate()
     .then(apiDefinition => {
       self.apiDefinition = apiDefinition;
-      self.errors = [];
 
       cb();
     })
@@ -72,9 +84,15 @@ exercise.addSetup(function (mode, cb) {
 });
 
 exercise.addVerifyProcessor(function (cb) {
-  const errors = this.errors;
   const shop = this.workshopper;
 
+  if (this.skipVerify) {
+    shop.options.footer = [];
+    exercise.emit('pass', shop.__('common.exercise.pass.moveAlong'));
+    return cb(null, true);
+  }
+
+  const errors = this.errors;
   if (errors.length) {
     if (exercise.__.has('fail.hint') && exercise.__('fail.hint').length > 0) {
       errors.push(

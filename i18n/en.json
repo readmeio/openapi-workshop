@@ -4,7 +4,8 @@
     "exercise": {
       "pass": {
         "success": "Congrats! You did it! 🎉",
-        "preview": "See how it renders as a guide on ReadMe: {{link}}"
+        "preview": "See how it renders as a guide on ReadMe: {{link}}",
+        "moveAlong": "This exercise doesnt require you to do anything so go ahead and run `{{appname}} next` to proceed."
       },
       "fail": {
         "hint": "🙋🏼‍♀️ Do you need a hint? If so, use this link for the answer: {{link}}",
@@ -124,7 +125,7 @@
     "return": ""
   },
   "progress": {
-    "reset": "{{title}} progress reset",
+    "reset": "⏪ Your {{title}} progress has been reset.",
     "finished": "You've finished all the exercises! Hooray!\n",
     "state": "Exercise {{count}} of {{amount}}",
     "remaining": {
