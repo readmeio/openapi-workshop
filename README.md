@@ -59,6 +59,6 @@ MIT © [ReadMe](https://readme.com)
 
 <!-- Badges -->
 
-[ci-image]: https://img.shields.io/github/workflow/status/readmeio/openapi-workshop/CI?style=flat-square
+[ci-image]: https://img.shields.io/github/actions/workflow/status/readmeio/openapi-workshop/ci.yml?branch=main&style=flat-square
 [node-image]: https://img.shields.io/node/v/openapi-workshop.svg?style=flat-square
 [npm-image]: https://img.shields.io/npm/v/openapi-workshop.svg?style=flat-square
